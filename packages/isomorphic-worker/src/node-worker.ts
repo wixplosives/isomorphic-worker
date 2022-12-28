@@ -1,7 +1,7 @@
 import { Worker, WorkerOptions } from 'worker_threads';
 import type { MessageType, UniversalMessage, UniversalWorker } from './types';
 
-export class NodeWorker implements UniversalWorker {
+class NodeWorker implements UniversalWorker {
     private worker: Worker;
 
     constructor(workerScript: string | URL, options?: WorkerOptions) {
@@ -20,3 +20,5 @@ export class NodeWorker implements UniversalWorker {
         this.worker.terminate();
     }
 }
+
+export { NodeWorker as Worker };

@@ -1,4 +1,4 @@
-import { NodeWorker as Worker } from '../node-worker.js';
+import { Worker } from '@wixc3/isomorphic-worker/dist/node-worker';
 import { createDisposables } from '@wixc3/create-disposables';
 import { expect } from 'chai';
 
@@ -12,7 +12,7 @@ describe('NodeWorker', () => {
         disposables.add(() => worker.terminate());
 
         await new Promise<void>((resolve) => {
-            worker.addEventListener('message', (message) => {
+            worker.addEventListener('message', (message: any) => {
                 expect(message.data).to.eq('Hello from the worker!');
                 resolve();
             });
