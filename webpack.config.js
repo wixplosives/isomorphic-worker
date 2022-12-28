@@ -1,8 +1,9 @@
 /** @type {import('webpack').Configuration} */
-export default {
+module.exports = {
     devtool: 'source-map',
     output: {
         libraryTarget: 'umd',
+        globalObject: 'self',
     },
     resolve: {
         fallback: {

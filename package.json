@@ -5,14 +5,19 @@
   "homepage": "https://github.com/wixplosives/isomorphic-worker",
   "main": "./dist/node.js",
   "types": "./dist/types.d.ts",
-  "type": "module",
   "browser": {
     "./dist/node-worker-scope.js": "./dist/browser-worker-scope.js",
     "./dist/node-worker.js": "./dist/browser-worker.js"
   },
   "exports": {
-    "worker-scope": "./dist/node-worker-scope.js",
-    "worker": "./dist/node-worker.js"
+    "worker-scope": {
+      "browser": "./dist/browser-worker-scope.js",
+      "default": "./dist/node-worker-scope.js"
+    },
+    "worker": {
+      "browser": "./dist/browser-worker.js",
+      "default": "./dist/node-worker.js"
+    }
   },
   "scripts": {
     "build": "tsc",
@@ -53,6 +58,10 @@
     "rimraf": "^3.0.2",
     "source-map-loader": "^4.0.1",
     "typescript": "^4.9.4",
-    "webpack": "^5.75.0"
+    "webpack": "^5.75.0",
+    "worker-plugin": "^5.0.1"
+  },
+  "dependencies": {
+    "worker-loader": "^3.0.8"
   }
 }
