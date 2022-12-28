@@ -11,7 +11,7 @@ export interface UniversalWorkerUserMethods {
     addEventListener: (type: MessageType, callback: (message: any) => void) => void;
 }
 
-export interface UniversalMessage {
-    type: string;
-    data: unknown;
+export interface UniversalMessage<T = unknown> {
+    data?: T;
+    error?: Error;
 }

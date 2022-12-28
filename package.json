@@ -6,6 +6,7 @@
   "main": "./dist/node.js",
   "types": "./dist/types.d.ts",
   "browser": "./dist/browser.js",
+  "type": "module",
   "exports": {
     "browser": "./dist/browser.js",
     "node": "./dist/node.js",
@@ -17,6 +18,7 @@
     "pretest": "npm run clean && npm run build",
     "test:browser": "mocha-play \"dist/test/browser/*.test.js\" -c ./webpack.config.js",
     "test:node": "mocha \"dist/test/node/*.test.js\"",
+    "test": "npm run test:node && npm run test:browser",
     "clean": "rimraf dist"
   },
   "keywords": [
@@ -45,12 +47,10 @@
     "chai": "^4.3.7",
     "mocha": "^10.2.0",
     "mocha-play": "^4.1.0",
+    "playwright": "^1.29.1",
     "rimraf": "^3.0.2",
     "source-map-loader": "^4.0.1",
     "typescript": "^4.9.4",
     "webpack": "^5.75.0"
-  },
-  "dependencies": {
-    "amd-loader": "^0.0.8"
   }
 }

@@ -1,10 +1,10 @@
 import { Worker, WorkerOptions } from 'worker_threads';
-import type { MessageType, UniversalWorker } from '../types';
+import type { MessageType, UniversalMessage, UniversalWorker } from '../types';
 
 export class NodeWorker implements UniversalWorker {
     private worker: Worker;
 
-    constructor(workerScript: string, options?: WorkerOptions) {
+    constructor(workerScript: string | URL, options?: WorkerOptions) {
         this.worker = new Worker(workerScript, options);
     }
 
@@ -12,8 +12,8 @@ export class NodeWorker implements UniversalWorker {
         this.worker.postMessage(message);
     }
 
-    public addEventListener(type: MessageType, callback: (message: any) => void) {
-        this.worker.on(type, callback);
+    public addEventListener(type: MessageType, callback: (message: UniversalMessage) => void) {
+        this.worker.on(type, (message) => callback({ data: message }));
     }
 
     public terminate() {

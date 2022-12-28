@@ -1,4 +1,4 @@
-import { worker } from '../../node/worker-user';
+import { worker } from '../../node/worker-user.js';
 
 worker.addEventListener('message', (event) => {
     console.log(`Received message on worker: ${event}`);

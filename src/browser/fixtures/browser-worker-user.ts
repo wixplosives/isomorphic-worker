@@ -1,4 +1,4 @@
-import { worker } from '../../browser/worker-user';
+import { worker } from '../../browser/worker-user.js';
 debugger;
 console.log('browser-worker-user.ts');
 worker.addEventListener('message', (event) => {
