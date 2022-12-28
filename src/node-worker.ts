@@ -1,5 +1,5 @@
 import { Worker, WorkerOptions } from 'worker_threads';
-import type { MessageType, UniversalMessage, UniversalWorker } from '../types';
+import type { MessageType, UniversalMessage, UniversalWorker } from './types';
 
 export class NodeWorker implements UniversalWorker {
     private worker: Worker;

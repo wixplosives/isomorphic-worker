@@ -1,5 +1,5 @@
 import { parentPort, type MessagePort } from 'worker_threads';
-import type { UniversalWorkerUserMethods } from '../types';
+import type { UniversalWorkerUserMethods } from './types';
 
 const port = (function getPort() {
     if (!parentPort) {

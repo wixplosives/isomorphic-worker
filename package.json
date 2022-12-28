@@ -5,19 +5,21 @@
   "homepage": "https://github.com/wixplosives/isomorphic-worker",
   "main": "./dist/node.js",
   "types": "./dist/types.d.ts",
-  "browser": "./dist/browser.js",
   "type": "module",
+  "browser": {
+    "./dist/node-worker-scope.js": "./dist/browser-worker-scope.js",
+    "./dist/node-worker.js": "./dist/browser-worker.js"
+  },
   "exports": {
-    "browser": "./dist/browser.js",
-    "node": "./dist/node.js",
-    "default": "./dist/node.js"
+    "worker-scope": "./dist/node-worker-scope.js",
+    "worker": "./dist/node-worker.js"
   },
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "pretest": "npm run clean && npm run build",
-    "test:browser": "mocha-play \"dist/test/browser/*.test.js\" -c ./webpack.config.js",
-    "test:node": "mocha \"dist/test/node/*.test.js\"",
+    "test:browser": "mocha-play \"dist/test/browser-*.test.js\" -c ./webpack.config.js",
+    "test:node": "mocha \"dist/test/node-*.test.js\"",
     "test": "npm run test:node && npm run test:browser",
     "clean": "rimraf dist"
   },

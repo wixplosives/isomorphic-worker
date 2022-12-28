@@ -1,4 +1,4 @@
-import type { UniversalWorkerUserMethods, UniversalMessage } from '../types';
+import type { UniversalWorkerUserMethods, UniversalMessage } from './types';
 
 class UniversalWorkerUser implements UniversalWorkerUserMethods {
     constructor(private self: Worker) {}
