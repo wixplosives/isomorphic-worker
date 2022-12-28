@@ -10,7 +10,7 @@
     "watch": "tsc --build -w",
     "pretest": "npm run clean && npm run build",
     "test:browser": "npm run test --workspace=@wixc3/isomorphic-worker-tests-browser",
-    "test:node": "npm run test --workspace=@wixc3/isomorphic-worker-tests-browser",
+    "test:node": "npm run test --workspace=@wixc3/isomorphic-worker-tests-node",
     "test": "run-s test:browser test:node",
     "clean": "rimraf \"packages/*/dist\""
   },
