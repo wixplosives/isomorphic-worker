@@ -4,6 +4,7 @@ jobs:
   tests:
     name: node ${{ matrix.node-version }} / ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    fail-fast: false
     strategy:
       matrix:
         node-version: [16]
