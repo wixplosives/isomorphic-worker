@@ -1,5 +1,5 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": { "outDir": "../dist", "module": "ES2020", "moduleResolution": "node" },
+  "compilerOptions": { "outDir": "../dist", "module": "ES2020", "moduleResolution": "node16" },
   "references": [{ "path": "../../isomorphic-worker/src" }]
 }

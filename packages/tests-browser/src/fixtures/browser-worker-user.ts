@@ -1,4 +1,4 @@
-import { worker } from '@wixc3/isomorphic-worker/dist/browser-worker-scope.js';
+import { worker } from '@wixc3/isomorphic-worker/worker-scope';
 
 console.log('worker starting');
 

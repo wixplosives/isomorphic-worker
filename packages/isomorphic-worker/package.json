@@ -7,6 +7,20 @@
     "build": "tsc",
     "watch": "tsc -w"
   },
+  "exports": {
+    "./worker-scope": {
+      "require": "./dist/node-worker-scope.js",
+      "types": "./dist/node-worker-scope.d.ts",
+      "default": "./dist/browser-worker-scope.js"
+    },
+    "./worker": {
+      "require": "./dist/node-worker.js",
+      "types": "./dist/node-worker.d.ts",
+      "default": "./dist/browser-worker.js"
+    },
+    "./package": "./package.json",
+    "./package.json": "./package.json"
+  },
   "keywords": [
     "worker threads",
     "worker_threads",
