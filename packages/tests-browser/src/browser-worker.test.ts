@@ -1,4 +1,4 @@
-import { Worker } from '@wixc3/isomorphic-worker/dist/browser-worker.js';
+import { Worker } from '@wixc3/isomorphic-worker/worker';
 import { createDisposables } from '@wixc3/create-disposables';
 import { expect } from 'chai';
 

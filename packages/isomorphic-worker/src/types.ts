@@ -1,5 +1,9 @@
 export type MessageType = 'message' | 'error';
 
+export interface UniversalWorkerOptions {
+    type?: 'classic' | 'module';
+}
+
 export interface UniversalWorker {
     postMessage: (message: unknown) => void;
     addEventListener: (type: MessageType, callback: (message: UniversalMessage) => void) => void;
