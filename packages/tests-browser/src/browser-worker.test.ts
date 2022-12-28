@@ -1,7 +1,6 @@
-import { BrowserWorker as Worker } from '../browser-worker.js';
+import { Worker } from '@wixc3/isomorphic-worker/dist/browser-worker.js';
 import { createDisposables } from '@wixc3/create-disposables';
 import { expect } from 'chai';
-console.log(Worker);
 
 describe('BrowserWorker', () => {
     const disposables = createDisposables();
@@ -11,10 +10,11 @@ describe('BrowserWorker', () => {
     it('can send and receive messages', async function () {
         console.log('starting');
         const worker = new Worker(new URL('./fixtures/browser-worker-user.js', import.meta.url), { type: 'module' });
+
         disposables.add(() => worker.terminate());
 
         await new Promise<void>((resolve) => {
-            worker.addEventListener('message', (message) => {
+            worker.addEventListener('message', (message: any) => {
                 expect(message.data).to.eq('Hello from the worker!');
                 resolve();
             });

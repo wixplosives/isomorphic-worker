@@ -3,13 +3,9 @@ export default {
     devtool: 'source-map',
     output: {
         libraryTarget: 'umd',
+        globalObject: 'self',
     },
-    resolve: {
-        fallback: {
-            // path: require.resolve('@file-services/path'),
-            // url: require.resolve('url'),
-        },
-    },
+    resolve: {},
     module: {
         rules: [
             {

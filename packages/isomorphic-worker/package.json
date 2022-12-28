@@ -1,21 +1,30 @@
 {
-  "name": "isomorphic-worker",
-  "workspaces": [
-    "packages/*"
-  ],
-  "version": "0.0.1",
+  "name": "@wixc3/isomorphic-worker",
+  "version": "1.0.0",
   "description": "simplified cross worker API for web workers and worker threads",
+  "homepage": "https://github.com/wixplosives/isomorphic-worker",
   "scripts": {
-    "build": "tsc --build",
-    "watch": "tsc --build -w",
-    "pretest": "npm run clean && npm run build",
-    "test:browser": "mocha-play \"dist/test/browser-*.test.js\" -c ./webpack.config.js",
-    "test:node": "mocha \"dist/test/node-*.test.js\"",
-    "test": "npm run test --workspace=@wixc3/isomorphic-worker-tests",
-    "clean": "rimraf \"packages/*/dist\""
+    "build": "tsc",
+    "watch": "tsc -w"
   },
+  "keywords": [
+    "worker threads",
+    "worker_threads",
+    "webworker",
+    "web worker",
+    "web-worker",
+    "worker",
+    "threads"
+  ],
   "author": "Wix.com",
   "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/wixplosives/isomorphic-worker/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wixplosives/isomorphic-worker.git"
+  },
   "devDependencies": {
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
@@ -32,6 +41,5 @@
   },
   "dependencies": {
     "worker-loader": "^3.0.8"
-  },
-  "private": true
+  }
 }
