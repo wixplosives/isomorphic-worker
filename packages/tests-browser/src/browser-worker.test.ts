@@ -8,7 +8,6 @@ describe('BrowserWorker', () => {
     afterEach(disposables.dispose);
 
     it('can send and receive messages', async function () {
-        console.log('starting');
         const worker = new Worker(new URL('./fixtures/browser-worker-user.js', import.meta.url), { type: 'module' });
 
         disposables.add(() => worker.terminate());
