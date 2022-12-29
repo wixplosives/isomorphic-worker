@@ -39,5 +39,6 @@
   },
   "dependencies": {
     "worker-loader": "^3.0.8"
-  }
+  },
+  "private": true
 }
