@@ -1,6 +1,6 @@
 {
   "name": "@wixc3/isomorphic-worker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "simplified cross worker API for web workers and worker threads",
   "homepage": "https://github.com/wixplosives/isomorphic-worker",
   "scripts": {
