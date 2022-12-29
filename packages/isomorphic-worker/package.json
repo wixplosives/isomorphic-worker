@@ -52,8 +52,5 @@
     "typescript": "^4.9.4",
     "webpack": "^5.75.0",
     "worker-plugin": "^5.0.1"
-  },
-  "dependencies": {
-    "worker-loader": "^3.0.8"
   }
 }
