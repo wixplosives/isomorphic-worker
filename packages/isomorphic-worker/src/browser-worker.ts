@@ -1,5 +1,6 @@
 import type { UniversalWorker } from './types';
 
-export const Worker = window.Worker as {
+// globalThis in case of initial worker script inside a worker
+export const Worker = globalThis.Worker as {
     new (url: string | URL, options: WorkerOptions): UniversalWorker;
 };
