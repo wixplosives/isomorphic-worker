@@ -9,11 +9,13 @@
   },
   "exports": {
     "./worker-scope": {
+      "browser": "./dist/browser-worker-scope.js",
       "require": "./dist/node-worker-scope.js",
       "types": "./dist/node-worker-scope.d.ts",
       "default": "./dist/browser-worker-scope.js"
     },
     "./worker": {
+      "browser": "./dist/browser-worker.js",
       "require": "./dist/node-worker.js",
       "types": "./dist/node-worker.d.ts",
       "default": "./dist/browser-worker.js"
