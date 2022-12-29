@@ -21,6 +21,11 @@
     "./package": "./package.json",
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist",
+    "src",
+    "!dist/tsconfig.tsbuildinfo"
+  ],
   "keywords": [
     "worker threads",
     "worker_threads",
