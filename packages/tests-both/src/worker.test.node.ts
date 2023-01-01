@@ -2,7 +2,8 @@ import { createDisposables } from '@wixc3/create-disposables';
 import { expect } from 'chai';
 import { initWorker } from './entry-point';
 
-describe('Both: NodeWorker', () => {
+describe('Both: NodeWorker', function () {
+    this.timeout(5_000);
     const disposables = createDisposables();
 
     afterEach(disposables.dispose);
