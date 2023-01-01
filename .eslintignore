@@ -1,0 +1,10 @@
+node_modules
+dist
+dist-app
+dist-electron
+dist-test
+dist-playground
+cjs
+esm
+umd
+npm
