@@ -2,12 +2,12 @@ import { createDisposables } from '@wixc3/create-disposables';
 import { expect } from 'chai';
 import { initWorker } from './entry-point';
 
-describe('NodeWorker', () => {
+describe('Both: NodeWorker', () => {
     const disposables = createDisposables();
 
     afterEach(disposables.dispose);
 
-    it('can send and receive messages', async function () {
+    it('can send and receive messages - ts worker', async function () {
         const worker = initWorker();
         disposables.add(async () => await worker.terminate());
 
