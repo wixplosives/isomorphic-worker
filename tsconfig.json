@@ -3,7 +3,8 @@
   "files": [],
   "references": [
     { "path": "./packages/isomorphic-worker/src" },
-    { "path": "./packages/tests-browser/src" },
+    { "path": "./packages/tests-both/src" },
+    { "path": "./packages/tests-browser-esm/src" },
     { "path": "./packages/tests-node/src" }
   ]
 }

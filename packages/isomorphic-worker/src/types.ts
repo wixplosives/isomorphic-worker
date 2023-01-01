@@ -1,5 +1,7 @@
 export type MessageType = 'message' | 'error';
 
+export type WorkerScript = string | URL;
+
 export interface UniversalWorkerOptions {
     type?: 'classic' | 'module';
 }

@@ -1,11 +1,11 @@
-import { Worker, WorkerOptions } from 'worker_threads';
-import type { MessageType, UniversalMessage, UniversalWorker, UniversalWorkerOptions } from './types';
+import { Worker } from 'worker_threads';
+import type { MessageType, UniversalMessage, UniversalWorker, UniversalWorkerOptions, WorkerScript } from './types';
 
 class NodeWorker implements UniversalWorker {
     private worker: Worker;
 
-    constructor(workerScript: string | URL, options?: UniversalWorkerOptions) {
-        this.worker = new Worker(workerScript);
+    constructor(url: WorkerScript, options?: UniversalWorkerOptions) {
+        this.worker = new Worker(url);
     }
 
     public postMessage(message: any) {
@@ -17,7 +17,7 @@ class NodeWorker implements UniversalWorker {
     }
 
     public terminate() {
-        this.worker.terminate();
+        return this.worker.terminate();
     }
 }
 

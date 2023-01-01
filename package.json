@@ -9,14 +9,15 @@
     "build": "tsc --build",
     "watch": "tsc --build -w",
     "pretest": "npm run clean && npm run build",
-    "test:browser": "npm run test --workspace=@wixc3/isomorphic-worker-tests-browser",
-    "test:node": "npm run test --workspace=@wixc3/isomorphic-worker-tests-node",
-    "test": "run-s test:browser test:node",
+    "test:browser": "npm run test:browser --workspaces --if-present",
+    "test:node": "npm run test:node --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
     "clean": "rimraf \"packages/*/dist\""
   },
   "author": "Wix.com",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@file-services/path": "^7.2.0",
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
     "@types/node": "18",

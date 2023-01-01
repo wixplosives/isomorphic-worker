@@ -1,28 +1,13 @@
 {
-  "name": "@wixc3/isomorphic-worker-tests-browser",
+  "name": "@wixc3/isomorphic-worker-tests-browser-esm",
   "version": "1.0.1",
   "type": "module",
   "scripts": {
-    "test": "mocha-play \"dist/browser-*.test.js\" -c ./webpack.config.js"
+    "test": "npm run test:browser",
+    "test:browser": "mocha-play \"dist/*.test.browser.js\" -c ./webpack.config.js"
   },
-  "keywords": [
-    "worker threads",
-    "worker_threads",
-    "webworker",
-    "web worker",
-    "web-worker",
-    "worker",
-    "threads"
-  ],
   "author": "Wix.com",
   "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/wixplosives/isomorphic-worker/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wixplosives/isomorphic-worker.git"
-  },
   "devDependencies": {
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
