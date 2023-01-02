@@ -13,7 +13,8 @@ describe('NodeWorker', () => {
 
         await new Promise<void>((resolve) => {
             worker.addEventListener('message', (message: any) => {
-                expect(message.data).to.eq('Hello from the worker!');
+                expect(message.data.originalMessage).to.eq('Hello from the main thread!');
+                expect(message.data.workerMessage).to.eq('Hello from the worker!');
                 resolve();
             });
             worker.postMessage('Hello from the main thread!');

@@ -16,7 +16,9 @@ class UniversalWorkerUser implements UniversalWorkerUserMethods {
     }
 
     addEventListener(type: 'message' | 'error', callback: (message: any) => void) {
-        this.portOrWorkerSelf.on(type, callback);
+        this.portOrWorkerSelf.on(type, function MessageFromNodeWorker(message) {
+            callback({ data: message });
+        });
     }
 }
 
