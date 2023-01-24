@@ -4,8 +4,8 @@ import type { MessageType, UniversalMessage, UniversalWorker, UniversalWorkerOpt
 class NodeWorker implements UniversalWorker {
     private worker: Worker;
 
-    constructor(url: WorkerScript, _options?: UniversalWorkerOptions) {
-        this.worker = new Worker(url);
+    constructor(url: WorkerScript, options?: UniversalWorkerOptions) {
+        this.worker = new Worker(url, options);
     }
 
     public postMessage(message: any) {

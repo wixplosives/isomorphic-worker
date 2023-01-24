@@ -1,4 +1,4 @@
-import { parentPort, type MessagePort } from 'worker_threads';
+import { parentPort, workerData, type MessagePort } from 'worker_threads';
 import type { UniversalWorkerUserMethods } from './types';
 
 const port = (function getPort() {
@@ -9,6 +9,7 @@ const port = (function getPort() {
 })();
 
 class UniversalWorkerUser implements UniversalWorkerUserMethods {
+    public workerData = workerData;
     constructor(private portOrWorkerSelf: MessagePort) {}
 
     postMessage(message: unknown) {
