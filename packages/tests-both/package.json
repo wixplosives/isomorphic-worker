@@ -1,6 +1,6 @@
 {
   "name": "@wixc3/isomorphic-worker-tests-both",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "scripts": {
     "test": "run-s test:browser test:node",
     "test:browser": "mocha-play \"dist/*.test.browser.js\" -c ./webpack.config.js",
