@@ -26,7 +26,11 @@
   "files": [
     "dist",
     "src",
-    "!dist/tsconfig.tsbuildinfo"
+    "!dist/tsconfig.tsbuildinfo",
+    "worker-scope.d.ts",
+    "worker.d.ts",
+    "worker.js",
+    "worker-scope.js"
   ],
   "keywords": [
     "worker threads",
