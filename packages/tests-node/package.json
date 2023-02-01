@@ -1,6 +1,6 @@
 {
   "name": "@wixc3/isomorphic-worker-tests-node",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "scripts": {
     "test": "npm run test:node",
     "test:node": "mocha \"dist/*.test.node.js\""
