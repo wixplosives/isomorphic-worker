@@ -1,6 +1,10 @@
 /** @type {import('webpack').Configuration} */
 module.exports = {
-    entry: { 'webpack-entry-worker-with-ts': './dist/fixtures/worker-with-ts.js' },
+    entry: {
+        'webpack-entry-worker-with-ts': './dist/fixtures/worker-with-ts.js',
+        'worker-1': './dist/fixtures/worker-1.js',
+        'worker-2': './dist/fixtures/worker-2.js',
+    },
     module: {
         rules: [
             {
