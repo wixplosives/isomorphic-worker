@@ -2,7 +2,7 @@ export type MessageType = 'message' | 'error';
 
 export type WorkerScript = string | URL;
 
-export interface UniversalWorkerOptions {
+export interface WorkerOptions {
     type?: 'classic' | 'module';
     /**
      * Worker data is only available in a node worker scope.
@@ -11,10 +11,14 @@ export interface UniversalWorkerOptions {
      * If you must use workerData by importing workerData from 'worker_threads',
      * you have to polyfill 'worker_threads' in the browser.
      */
-    workerData?: any;
-    // TODO: check if this can be standardized by query params
+    workerData?: any; // TODO: check if this can be standardized by query params
 }
 
+export type UniversalWorkerOptions = WorkerOptions | undefined;
+
+export interface UniversalWorkerConstructor {
+    new (url: WorkerScript, options: WorkerOptions): UniversalWorker;
+}
 export interface UniversalWorker {
     postMessage: (message: unknown) => void;
     addEventListener: (type: MessageType, callback: (message: UniversalMessage) => void) => void;
