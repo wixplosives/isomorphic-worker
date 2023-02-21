@@ -2,9 +2,12 @@
   "name": "@wixc3/isomorphic-worker-tests-both",
   "version": "1.0.9",
   "scripts": {
-    "test": "run-s test:browser test:node",
+    "test": "run-s test:universal test:browser test:node",
     "test:browser": "mocha-play \"dist/*.test.browser.js\" -c ./webpack.config.js",
-    "test:node": "mocha \"dist/*.test.node.js\""
+    "test:node": "mocha \"dist/*.test.node.js\"",
+    "test:universal": "run-s test:universal:browser test:universal:node",
+    "test:universal:browser": "mocha-play \"dist/*.test.universal.js\" -c ./webpack.config.js",
+    "test:universal:node": "mocha \"dist/*.test.universal.js\""
   },
   "private": true
 }
