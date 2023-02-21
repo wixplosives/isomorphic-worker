@@ -1,12 +1,11 @@
 import { worker } from '@wixc3/isomorphic-worker/worker-scope';
+import { log } from '../log';
 
 // eslint-disable-next-line no-console
-const log = console.log.bind(console, 'worker2 | ');
+worker.addEventListener('error', (e) => console.log(e));
+worker.addEventListener('message', (e: unknown) => {
+    log('worker 2 got event from creator:', e);
 
-// eslint-disable-next-line no-console
-worker.addEventListener('error', (e) => log(e));
-worker.addEventListener('message', ({ data }: { data: unknown }) => {
-    log(data);
     worker.postMessage('Hello from worker 2 (nested worker)');
 });
-log('second worker listener attached');
+log('worker 2 finished evaluating');

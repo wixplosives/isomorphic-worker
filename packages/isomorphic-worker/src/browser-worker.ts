@@ -1,6 +1,6 @@
-import type { UniversalWorker, WorkerScript } from './types';
+import './browser-polyfill/main-worker-host';
+import './browser-polyfill/nested-worker-polyfill';
+import type { UniversalWorkerConstructor } from './types';
 
 // globalThis in case of initial worker script inside a worker
-export const Worker = globalThis.Worker as {
-    new (url: WorkerScript, options: WorkerOptions): UniversalWorker;
-};
+export const Worker = globalThis.Worker as UniversalWorkerConstructor;
