@@ -22,15 +22,20 @@ export interface UniversalWorkerConstructor {
 export interface UniversalWorker {
     postMessage: (message: unknown) => void;
     addEventListener: (type: MessageType, callback: (message: UniversalMessage) => void) => void;
+    removeEventListener: (type: MessageType, callback: (message: UniversalMessage) => void) => void;
     terminate: () => void;
 }
 
 export interface UniversalWorkerUserMethods {
     postMessage: (message: unknown) => void;
     addEventListener: (type: MessageType, callback: (message: any) => void) => void;
+    removeEventListener: (type: MessageType, callback: (message: UniversalMessage) => void) => void;
 }
 
 export interface UniversalMessage<T = unknown> {
     data?: T;
     error?: Error;
 }
+
+export type UniversalMessageHandler = (message: UniversalMessage<unknown>) => void;
+export type WorkerMessageHandler = (message: any) => void;

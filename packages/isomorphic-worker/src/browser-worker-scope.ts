@@ -1,4 +1,10 @@
-import type { UniversalWorkerUserMethods, UniversalMessage } from './types';
+import type {
+    MessageType,
+    UniversalMessage,
+    UniversalMessageHandler,
+    UniversalWorkerUserMethods,
+    WorkerMessageHandler,
+} from './types';
 
 const getMessageData = (message: unknown): unknown => {
     if (message instanceof MessageEvent) {
@@ -8,6 +14,8 @@ const getMessageData = (message: unknown): unknown => {
 };
 
 class UniversalWorkerUser implements UniversalWorkerUserMethods {
+    private messageHandlersMap = new Map<UniversalMessageHandler, WorkerMessageHandler>();
+
     constructor(private self: Worker) {}
 
     public postMessage(message: unknown) {
@@ -16,12 +24,20 @@ class UniversalWorkerUser implements UniversalWorkerUserMethods {
     }
 
     public addEventListener(type: 'message' | 'error', callback: (message: UniversalMessage) => void) {
-        this.self.addEventListener(type, (e) => {
-            callback({
-                data: 'data' in e ? e.data : undefined,
-                error: 'error' in e ? e.error : undefined,
-            });
-        });
+        const handler = (e: any) =>
+            callback({ data: 'data' in e ? e.data : undefined, error: 'error' in e ? e.error : undefined });
+        this.messageHandlersMap.set(callback, handler);
+
+        this.self.addEventListener(type, handler);
+    }
+
+    public removeEventListener(type: MessageType, callback: (message: UniversalMessage<unknown>) => void) {
+        const handler = this.messageHandlersMap.get(callback);
+        if (handler) {
+            this.self.removeEventListener(type, handler);
+        }
+
+        this.messageHandlersMap.delete(callback);
     }
 }
 
