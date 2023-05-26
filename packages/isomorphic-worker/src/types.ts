@@ -3,6 +3,7 @@ export type MessageType = 'message' | 'error';
 export type WorkerScript = string | URL;
 
 export interface WorkerOptions {
+    name?: string;
     type?: 'classic' | 'module';
     /**
      * Worker data is only available in a node worker scope.
