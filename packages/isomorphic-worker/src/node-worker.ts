@@ -1,8 +1,16 @@
 import { Worker } from 'worker_threads';
-import type { MessageType, UniversalMessage, UniversalWorker, UniversalWorkerOptions, WorkerScript } from './types';
+import type {
+    MessageType,
+    UniversalMessageHandler,
+    UniversalWorker,
+    UniversalWorkerOptions,
+    WorkerMessageHandler,
+    WorkerScript,
+} from './types';
 
 class NodeWorker implements UniversalWorker {
     private worker: Worker;
+    private messageHandlersMap = new Map<UniversalMessageHandler, WorkerMessageHandler>();
 
     constructor(url: WorkerScript, options?: UniversalWorkerOptions) {
         this.worker = new Worker(url, options);
@@ -12,8 +20,19 @@ class NodeWorker implements UniversalWorker {
         this.worker.postMessage(message);
     }
 
-    public addEventListener(type: MessageType, callback: (message: UniversalMessage) => void) {
-        this.worker.on(type, (message) => callback({ data: message }));
+    public addEventListener(type: MessageType, callback: UniversalMessageHandler) {
+        const handler = (message: any) => callback({ data: message });
+        this.messageHandlersMap.set(callback, handler);
+
+        this.worker.on(type, handler);
+    }
+
+    removeEventListener(type: MessageType, callback: UniversalMessageHandler) {
+        const handler = this.messageHandlersMap.get(callback);
+        if (handler) {
+            this.worker.off(type, handler);
+        }
+        this.messageHandlersMap.delete(callback);
     }
 
     public terminate() {

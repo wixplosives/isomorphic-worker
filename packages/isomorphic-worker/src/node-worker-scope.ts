@@ -1,5 +1,11 @@
 import { parentPort, workerData, type MessagePort } from 'worker_threads';
-import type { UniversalWorkerUserMethods } from './types';
+import type {
+    MessageType,
+    UniversalMessage,
+    UniversalMessageHandler,
+    UniversalWorkerUserMethods,
+    WorkerMessageHandler,
+} from './types';
 
 const port = (function getPort() {
     if (!parentPort) {
@@ -9,6 +15,7 @@ const port = (function getPort() {
 })();
 
 class UniversalWorkerUser implements UniversalWorkerUserMethods {
+    private messageHandlersMap = new Map<UniversalMessageHandler, WorkerMessageHandler>();
     public workerData = workerData;
     constructor(private portOrWorkerSelf: MessagePort) {}
 
@@ -17,9 +24,21 @@ class UniversalWorkerUser implements UniversalWorkerUserMethods {
     }
 
     addEventListener(type: 'message' | 'error', callback: (message: any) => void) {
+        const handler = (message: any) => callback({ data: message });
+        this.messageHandlersMap.set(callback, handler);
+
         this.portOrWorkerSelf.on(type, function MessageFromNodeWorker(message) {
             callback({ data: message });
         });
+    }
+
+    public removeEventListener(type: MessageType, callback: (message: UniversalMessage<unknown>) => void) {
+        const handler = this.messageHandlersMap.get(callback);
+        if (handler) {
+            this.portOrWorkerSelf.off(type, handler);
+        }
+
+        this.messageHandlersMap.delete(callback);
     }
 }
 
