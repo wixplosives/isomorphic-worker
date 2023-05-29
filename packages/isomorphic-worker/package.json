@@ -41,13 +41,16 @@
     "worker",
     "threads"
   ],
-  "author": "Wix.com",
-  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/wixplosives/isomorphic-worker/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wixplosives/isomorphic-worker.git"
+  },
+  "author": "Wix.com",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
   }
 }
