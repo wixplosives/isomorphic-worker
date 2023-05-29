@@ -20,6 +20,10 @@
       "types": "./dist/node-worker.d.ts",
       "default": "./dist/browser-worker.js"
     },
+    "./types": {
+      "types": "./dist/types.d.ts",
+      "default": "./dist/types.js"
+    },
     "./package": "./package.json",
     "./package.json": "./package.json"
   },
