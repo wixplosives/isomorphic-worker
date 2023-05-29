@@ -1,6 +1,6 @@
 {
   "name": "@wixc3/isomorphic-worker-tests-browser-esm",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "scripts": {
     "test": "npm run test:browser",
