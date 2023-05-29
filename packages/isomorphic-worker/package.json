@@ -31,6 +31,8 @@
     "dist",
     "src",
     "!dist/tsconfig.tsbuildinfo",
+    "types.d.ts",
+    "types.js",
     "worker-scope.d.ts",
     "worker.d.ts",
     "worker.js",
