@@ -27,6 +27,10 @@
     "./package": "./package.json",
     "./package.json": "./package.json"
   },
+  "browser": {
+    "./worker-scope.js": "./dist/browser-worker-scope.js",
+    "./worker.js": "./dist/browser-worker.js"
+  },
   "files": [
     "dist",
     "src",
