@@ -1,4 +1,4 @@
-import { parentPort, workerData, type MessagePort } from 'worker_threads';
+import { parentPort, workerData, type MessagePort } from 'node:worker_threads';
 import type {
     MessageType,
     UniversalMessage,
