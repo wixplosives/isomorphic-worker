@@ -1,5 +1,5 @@
 import { worker } from '@wixc3/isomorphic-worker/worker-scope';
-import { log } from '../log';
+import { log } from '../log.js';
 
 // eslint-disable-next-line no-console
 worker.addEventListener('error', (e) => console.log(e));

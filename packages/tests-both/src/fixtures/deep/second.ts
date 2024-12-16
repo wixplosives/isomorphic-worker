@@ -1,6 +1,6 @@
 import { Worker } from '@wixc3/isomorphic-worker/worker';
 import { worker } from '@wixc3/isomorphic-worker/worker-scope';
-import { log } from '../../log';
+import { log } from '../../log.js';
 
 const workerName = 'second-level';
 const thirdWorker = new Worker('./nested-worker-with-id.js?id=third-level');

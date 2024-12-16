@@ -1,6 +1,6 @@
 import { createDisposables } from '@wixc3/create-disposables';
 import { expect } from 'chai';
-import { initWorker } from './entry-point';
+import { initWorker } from './entry-point.js';
 
 describe('Both: NodeWorker', function () {
     this.timeout(5_000);

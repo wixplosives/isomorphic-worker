@@ -1,5 +1,5 @@
-import type { UniversalWorkerOptions, WorkerScript } from '../types';
-import { CREATE_NESTED_WORKER } from './constants';
+import type { UniversalWorkerOptions, WorkerScript } from '../types.js';
+import { CREATE_NESTED_WORKER } from './constants.js';
 
 type MessageListener = (e: MessageEvent) => void;
 
@@ -32,7 +32,7 @@ class WorkerBridge {
              * signature: postMessage(message: any, transfer?: Transferable[]): void;
              * https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/postMessage
              */
-            transferables as any
+            transferables as any,
         );
     }
     /**

@@ -1,6 +1,6 @@
-import type { UniversalWorkerOptions, WorkerScript } from '../types';
-import { CREATE_NESTED_WORKER } from './constants';
-import { isSafari } from './is-safari';
+import type { UniversalWorkerOptions, WorkerScript } from '../types.js';
+import { CREATE_NESTED_WORKER } from './constants.js';
+import { isSafari } from './is-safari.js';
 
 const isMainThreadInSafari = isSafari && !!globalThis.Worker;
 

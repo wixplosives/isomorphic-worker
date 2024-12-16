@@ -6,7 +6,7 @@ import type {
     UniversalWorkerOptions,
     WorkerMessageHandler,
     WorkerScript,
-} from './types';
+} from './types.js';
 
 class NodeWorker implements UniversalWorker {
     private worker: Worker;

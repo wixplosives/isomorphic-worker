@@ -1,9 +1,10 @@
 {
   "name": "isomorphic-worker",
+  "private": true,
+  "type": "module",
   "workspaces": [
     "packages/*"
   ],
-  "version": "0.0.1",
   "description": "simplified cross worker API for web workers and worker threads",
   "scripts": {
     "build": "tsc --build",
@@ -12,32 +13,30 @@
     "test:browser": "npm run test:browser --workspaces --if-present",
     "test:node": "npm run test:node --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
-    "lint": "eslint .",
+    "lint": "eslint",
     "clean": "rimraf -g \"packages/*/dist\""
   },
   "author": "Wix.com",
   "license": "MIT",
   "devDependencies": {
-    "@file-services/path": "^8.1.1",
-    "@types/chai": "^4.3.5",
-    "@types/mocha": "^10.0.1",
-    "@types/node": "18",
-    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@file-services/path": "^9.4.1",
+    "@types/chai": "^5.0.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22",
+    "@typescript-eslint/eslint-plugin": "^8.18.0",
     "@wixc3/create-disposables": "^2.2.0",
-    "chai": "^4.3.7",
-    "eslint": "^8.46.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-no-only-tests": "^3.1.0",
-    "mocha": "^10.2.0",
-    "mocha-play": "^6.0.0",
-    "npm-run-all": "^4.1.5",
-    "playwright-chromium": "^1.36.2",
-    "playwright-core": "^1.36.2",
-    "prettier": "^3.0.1",
-    "rimraf": "^5.0.1",
-    "source-map-loader": "^4.0.1",
-    "typescript": "~5.1.6",
-    "webpack": "^5.88.2"
-  },
-  "private": true
+    "chai": "^5.1.2",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-no-only-tests": "^3.3.0",
+    "mocha": "^11.0.1",
+    "mocha-play": "^7.0.5",
+    "playwright-chromium": "^1.49.1",
+    "playwright-core": "^1.49.1",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
+    "source-map-loader": "^5.0.0",
+    "typescript": "~5.7.2",
+    "webpack": "^5.97.1"
+  }
 }

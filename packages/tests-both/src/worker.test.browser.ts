@@ -1,6 +1,6 @@
 import { createDisposables } from '@wixc3/create-disposables';
 import { Worker } from '@wixc3/isomorphic-worker/worker';
-import { log, logMessage } from './log';
+import { log, logMessage } from './log.js';
 
 describe('Both: BrowserWorker', function () {
     this.timeout(5_000);

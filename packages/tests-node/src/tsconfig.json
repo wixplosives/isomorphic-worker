@@ -1,5 +1,5 @@
 {
   "extends": "../../../tsconfig.base.json",
-  "compilerOptions": { "outDir": "../dist", "module": "CommonJS", "moduleResolution": "node16" },
+  "compilerOptions": { "outDir": "../dist" },
   "references": [{ "path": "../../isomorphic-worker/src" }]
 }
