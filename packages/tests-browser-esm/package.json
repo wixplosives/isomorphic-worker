@@ -1,12 +1,12 @@
 {
   "name": "@wixc3/isomorphic-worker-tests-browser-esm",
   "version": "1.2.5",
+  "private": true,
   "type": "module",
   "scripts": {
     "test": "npm run test:browser",
     "test:browser": "mocha-play \"dist/*.test.browser.js\" -c ./webpack.config.js"
   },
   "author": "Wix.com",
-  "license": "UNLICENSED",
-  "private": true
+  "license": "UNLICENSED"
 }

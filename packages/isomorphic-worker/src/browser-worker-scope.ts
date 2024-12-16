@@ -4,7 +4,7 @@ import type {
     UniversalMessageHandler,
     UniversalWorkerUserMethods,
     WorkerMessageHandler,
-} from './types';
+} from './types.js';
 
 const getMessageData = (message: unknown): unknown => {
     if (message instanceof MessageEvent) {

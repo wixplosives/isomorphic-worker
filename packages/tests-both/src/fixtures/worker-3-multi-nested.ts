@@ -1,6 +1,6 @@
 import { Worker } from '@wixc3/isomorphic-worker/worker';
 import { worker } from '@wixc3/isomorphic-worker/worker-scope';
-import { log, logMessage } from '../log';
+import { log, logMessage } from '../log.js';
 
 const workerName = 'first-level-nested-worker';
 const workers: Worker[] = [];

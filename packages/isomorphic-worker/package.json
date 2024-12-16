@@ -1,12 +1,9 @@
 {
   "name": "@wixc3/isomorphic-worker",
   "version": "1.2.5",
+  "type": "module",
   "description": "simplified cross worker API for web workers and worker threads",
   "homepage": "https://github.com/wixplosives/isomorphic-worker",
-  "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w"
-  },
   "exports": {
     "./worker-scope": {
       "browser": "./dist/browser-worker-scope.js",
@@ -27,20 +24,10 @@
     "./package": "./package.json",
     "./package.json": "./package.json"
   },
-  "browser": {
-    "./worker-scope.js": "./dist/browser-worker-scope.js",
-    "./worker.js": "./dist/browser-worker.js"
-  },
   "files": [
     "dist",
     "src",
-    "!dist/tsconfig.tsbuildinfo",
-    "types.d.ts",
-    "types.js",
-    "worker-scope.d.ts",
-    "worker.d.ts",
-    "worker.js",
-    "worker-scope.js"
+    "!*/tsconfig.{json,tsbuildinfo}"
   ],
   "keywords": [
     "worker threads",
@@ -56,7 +43,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wixplosives/isomorphic-worker.git"
+    "url": "git+https://github.com/wixplosives/isomorphic-worker.git",
+    "directory": "packages/isomorphic-worker"
   },
   "author": "Wix.com",
   "license": "MIT",

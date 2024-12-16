@@ -5,7 +5,7 @@ import type {
     UniversalMessageHandler,
     UniversalWorkerUserMethods,
     WorkerMessageHandler,
-} from './types';
+} from './types.js';
 
 const port = (function getPort() {
     if (!parentPort) {

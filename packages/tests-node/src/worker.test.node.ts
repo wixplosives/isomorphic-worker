@@ -8,7 +8,7 @@ describe('NodeWorker', () => {
     afterEach(disposables.dispose);
 
     it('can send and receive messages', async function () {
-        const worker = new Worker(require.resolve('./fixtures/node-worker-user.js'));
+        const worker = new Worker(new URL(import.meta.resolve('./fixtures/node-worker-user.js')));
         disposables.add(() => worker.terminate());
 
         await new Promise<void>((resolve) => {
@@ -22,7 +22,7 @@ describe('NodeWorker', () => {
     });
 
     it('gets the initial worker data', async function () {
-        const worker = new Worker(require.resolve('./fixtures/node-worker-user.js'), {
+        const worker = new Worker(new URL(import.meta.resolve('./fixtures/node-worker-user.js')), {
             workerData: 'initial worker data',
         });
         disposables.add(() => worker.terminate());

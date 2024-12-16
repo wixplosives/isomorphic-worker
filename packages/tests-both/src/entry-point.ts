@@ -6,7 +6,7 @@ const isNode =
 
 export function initWorker() {
     const worker = new Worker(
-        isNode ? join(__dirname, 'fixtures', './worker-with-ts.js') : './webpack-entry-worker-with-ts.js'
+        isNode ? join(import.meta.dirname, 'fixtures', './worker-with-ts.js') : './webpack-entry-worker-with-ts.js',
     );
     return worker;
 }
