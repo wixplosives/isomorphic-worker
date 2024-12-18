@@ -12,7 +12,7 @@ export interface WorkerOptions {
      * If you must use workerData by importing workerData from 'worker_threads',
      * you have to polyfill 'worker_threads' in the browser.
      */
-    workerData?: any; // TODO: check if this can be standardized by query params
+    workerData?: unknown; // TODO: check if this can be standardized by query params
 }
 
 export type UniversalWorkerOptions = WorkerOptions | undefined;
@@ -24,12 +24,12 @@ export interface UniversalWorker {
     postMessage: (message: unknown) => void;
     addEventListener: (type: MessageType, callback: (message: UniversalMessage) => void) => void;
     removeEventListener: (type: MessageType, callback: (message: UniversalMessage) => void) => void;
-    terminate: () => void;
+    terminate: () => Promise<number> | void;
 }
 
 export interface UniversalWorkerUserMethods {
     postMessage: (message: unknown) => void;
-    addEventListener: (type: MessageType, callback: (message: any) => void) => void;
+    addEventListener: (type: MessageType, callback: (message: UniversalMessage) => void) => void;
     removeEventListener: (type: MessageType, callback: (message: UniversalMessage) => void) => void;
 }
 
@@ -38,5 +38,5 @@ export interface UniversalMessage<T = unknown> {
     error?: Error;
 }
 
-export type UniversalMessageHandler = (message: UniversalMessage<unknown>) => void;
-export type WorkerMessageHandler = (message: any) => void;
+export type UniversalMessageHandler = (message: UniversalMessage) => void;
+export type WorkerMessageHandler = (message: UniversalMessage) => void;

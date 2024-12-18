@@ -13,7 +13,7 @@ describe('Both: NodeWorker', function () {
         disposables.add(async () => await worker.terminate());
 
         await new Promise<void>((resolve) => {
-            worker.addEventListener('message', (message: any) => {
+            worker.addEventListener('message', (message) => {
                 expect(message.data).to.include('Hello from worker');
                 expect(message.data).to.include('parseDiagnostics');
                 expect(message.data).to.include('languageVersion');

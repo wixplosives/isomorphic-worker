@@ -16,23 +16,23 @@ const port = (function getPort() {
 
 class UniversalWorkerUser implements UniversalWorkerUserMethods {
     private messageHandlersMap = new Map<UniversalMessageHandler, WorkerMessageHandler>();
-    public workerData = workerData;
+    public workerData: unknown = workerData;
     constructor(private portOrWorkerSelf: MessagePort) {}
 
     postMessage(message: unknown) {
         this.portOrWorkerSelf.postMessage(message);
     }
 
-    addEventListener(type: 'message' | 'error', callback: (message: any) => void) {
-        const handler = (message: any) => callback({ data: message });
+    addEventListener(type: 'message' | 'error', callback: (message: UniversalMessage) => void) {
+        const handler: WorkerMessageHandler = (message) => callback({ data: message });
         this.messageHandlersMap.set(callback, handler);
 
-        this.portOrWorkerSelf.on(type, function MessageFromNodeWorker(message) {
+        this.portOrWorkerSelf.on(type, function MessageFromNodeWorker(message: unknown) {
             callback({ data: message });
         });
     }
 
-    public removeEventListener(type: MessageType, callback: (message: UniversalMessage<unknown>) => void) {
+    public removeEventListener(type: MessageType, callback: (message: UniversalMessage) => void) {
         const handler = this.messageHandlersMap.get(callback);
         if (handler) {
             this.portOrWorkerSelf.off(type, handler);

@@ -19,9 +19,9 @@ const isMainThreadInSafari = isSafari && !!globalThis.Worker;
 
         private hookEnvironment() {
             this.addEventListener('message', (e) => {
-                const params = e.data;
+                const params = e.data as { type?: string; constructorArgs: [WorkerScript, UniversalWorkerOptions] };
                 if (params?.type === CREATE_NESTED_WORKER) {
-                    const port = e.ports[0];
+                    const [port] = e.ports;
                     /**
                      * e.ports[0] === e.data.port // true
                      */
@@ -43,7 +43,7 @@ const isMainThreadInSafari = isSafari && !!globalThis.Worker;
 
     function connectToWorker(worker: Worker, port: MessagePort) {
         worker.addEventListener('message', (e) => {
-            port.postMessage(e.data, e.ports.length ? ([e.ports[0]] as any) : undefined);
+            port.postMessage(e.data, e.ports.length ? [e.ports[0]!] : undefined!);
         });
 
         port.addEventListener('message', (e) => {

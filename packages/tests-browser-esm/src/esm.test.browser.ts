@@ -13,7 +13,7 @@ describe('BrowserWorker', () => {
         disposables.add(() => worker.terminate());
 
         await new Promise<void>((resolve) => {
-            worker.addEventListener('message', (message: any) => {
+            worker.addEventListener('message', (message) => {
                 expect(message.data).to.eq('Hello from the worker!');
                 resolve();
             });
