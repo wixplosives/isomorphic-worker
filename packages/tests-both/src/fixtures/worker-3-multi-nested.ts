@@ -9,7 +9,7 @@ workers.push(new Worker('./nested-worker-with-id.js?id=b'));
 
 worker.addEventListener('error', (e) => log(e));
 worker.addEventListener('message', (message) => {
-    log(`"${workerName}" got message from creator: ${message.data}`);
+    log(`"${workerName}" got message from creator: ${message.data as string}`);
 
     for (const nestedWorker of workers) {
         nestedWorker.postMessage('Hello from first-level nested worker');

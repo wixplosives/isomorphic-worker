@@ -16,12 +16,12 @@ class NodeWorker implements UniversalWorker {
         this.worker = new Worker(url, options);
     }
 
-    public postMessage(message: any) {
+    public postMessage(message: unknown) {
         this.worker.postMessage(message);
     }
 
     public addEventListener(type: MessageType, callback: UniversalMessageHandler) {
-        const handler = (message: any) => callback({ data: message });
+        const handler: WorkerMessageHandler = (message) => callback({ data: message });
         this.messageHandlersMap.set(callback, handler);
 
         this.worker.on(type, handler);

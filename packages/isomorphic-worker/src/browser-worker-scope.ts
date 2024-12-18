@@ -24,14 +24,14 @@ class UniversalWorkerUser implements UniversalWorkerUserMethods {
     }
 
     public addEventListener(type: 'message' | 'error', callback: (message: UniversalMessage) => void) {
-        const handler = (e: any) =>
+        const handler: WorkerMessageHandler = (e) =>
             callback({ data: 'data' in e ? e.data : undefined, error: 'error' in e ? e.error : undefined });
         this.messageHandlersMap.set(callback, handler);
 
         this.self.addEventListener(type, handler);
     }
 
-    public removeEventListener(type: MessageType, callback: (message: UniversalMessage<unknown>) => void) {
+    public removeEventListener(type: MessageType, callback: (message: UniversalMessage) => void) {
         const handler = this.messageHandlersMap.get(callback);
         if (handler) {
             this.self.removeEventListener(type, handler);
@@ -41,4 +41,4 @@ class UniversalWorkerUser implements UniversalWorkerUserMethods {
     }
 }
 
-export const worker = new UniversalWorkerUser(self as any);
+export const worker = new UniversalWorkerUser(self as unknown as Worker);

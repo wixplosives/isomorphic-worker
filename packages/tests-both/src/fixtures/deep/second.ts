@@ -7,13 +7,13 @@ const thirdWorker = new Worker('./nested-worker-with-id.js?id=third-level');
 
 worker.addEventListener('error', (e) => log(e));
 worker.addEventListener('message', (message) => {
-    log(`"${workerName}" got message from creator: ${message.data}`);
+    log(`"${workerName}" got message from creator: ${message.data as string}`);
     thirdWorker.postMessage('Hello from second-level nested worker');
 });
 
 thirdWorker.addEventListener('message', (message) => {
     const data = message.data;
-    log(`"${workerName}" got message: "${data}"`);
+    log(`"${workerName}" got message: "${data as string}"`);
     worker.postMessage(data);
 });
 

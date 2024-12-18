@@ -19,7 +19,7 @@ class WorkerBridge {
         };
         this.channel.port1.onmessage = messageToWorkerCreator;
 
-        const transferables: Transferable[] = [this.channel.port2];
+        const transferables = [this.channel.port2];
 
         // always sent to main thread
         self.postMessage(
@@ -28,11 +28,8 @@ class WorkerBridge {
                 constructorArgs: [url, options],
                 transferables,
             },
-            /**
-             * signature: postMessage(message: any, transfer?: Transferable[]): void;
-             * https://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope/postMessage
-             */
-            transferables as any,
+            // transferables as second paramater is only available when using tsconfig's "lib": ["webworker"]
+            transferables as unknown as string,
         );
     }
     /**
@@ -77,5 +74,5 @@ class WorkerBridge {
 }
 
 if (!globalThis.Worker) {
-    globalThis.Worker = WorkerBridge as any;
+    globalThis.Worker = WorkerBridge as unknown as typeof Worker;
 }

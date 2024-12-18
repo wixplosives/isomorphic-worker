@@ -26,6 +26,7 @@ export default [
         files: ['**/*.{ts,tsx,mts,cts}'],
         rules: {
             '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+            '@typescript-eslint/unbound-method': 'off',
         },
     },
     configPrettier,
