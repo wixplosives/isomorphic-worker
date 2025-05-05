@@ -20,7 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "@file-services/path": "^10.0.1",
-    "@types/chai": "^5.2.1",
+    "@types/chai": "^5.2.2",
     "@types/mocha": "^10.0.10",
     "@types/node": "22",
     "@wixc3/create-disposables": "^2.2.0",
@@ -36,7 +36,7 @@
     "rimraf": "^6.0.1",
     "source-map-loader": "^5.0.0",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.31.1",
+    "typescript-eslint": "^8.32.0",
     "webpack": "^5.99.7"
   }
 }
