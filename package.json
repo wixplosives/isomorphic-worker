@@ -29,7 +29,7 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-no-only-tests": "^3.3.0",
     "mocha": "^11.3.0",
-    "mocha-play": "^8.1.0",
+    "mocha-play": "^8.2.0",
     "playwright-chromium": "^1.52.0",
     "playwright-core": "^1.52.0",
     "prettier": "^3.5.3",
