@@ -25,7 +25,7 @@
     "@types/node": "22",
     "@wixc3/create-disposables": "^2.2.0",
     "chai": "^5.2.0",
-    "eslint": "^9.27.0",
+    "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-no-only-tests": "^3.3.0",
     "mocha": "^11.5.0",
