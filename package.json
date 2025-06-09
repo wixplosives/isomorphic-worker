@@ -28,7 +28,7 @@
     "eslint": "^9.28.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-no-only-tests": "^3.3.0",
-    "mocha": "^11.5.0",
+    "mocha": "^11.6.0",
     "mocha-play": "^8.2.0",
     "playwright-chromium": "^1.52.0",
     "playwright-core": "^1.52.0",
@@ -36,7 +36,7 @@
     "rimraf": "^6.0.1",
     "source-map-loader": "^5.0.0",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.33.1",
+    "typescript-eslint": "^8.34.0",
     "webpack": "^5.99.9"
   }
 }
