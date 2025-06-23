@@ -31,7 +31,7 @@
     "mocha": "^11.7.0",
     "mocha-play": "^8.2.0",
     "playwright-chromium": "^1.53.1",
-    "prettier": "^3.5.3",
+    "prettier": "^3.6.0",
     "rimraf": "^6.0.1",
     "source-map-loader": "^5.0.0",
     "typescript": "~5.8.3",
