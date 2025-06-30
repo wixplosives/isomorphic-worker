@@ -30,12 +30,12 @@
     "eslint-plugin-no-only-tests": "^3.3.0",
     "mocha": "^11.7.1",
     "mocha-play": "^8.2.0",
-    "playwright-chromium": "^1.53.1",
+    "playwright-chromium": "^1.53.2",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
     "source-map-loader": "^5.0.0",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.35.0",
+    "typescript-eslint": "^8.35.1",
     "webpack": "^5.99.9"
   }
 }
