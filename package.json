@@ -30,7 +30,7 @@
     "eslint-plugin-no-only-tests": "^3.3.0",
     "mocha": "^11.7.1",
     "mocha-play": "^8.2.0",
-    "playwright-chromium": "^1.54.0",
+    "playwright-chromium": "^1.54.1",
     "prettier": "^3.6.2",
     "rimraf": "^6.0.1",
     "source-map-loader": "^5.0.0",
