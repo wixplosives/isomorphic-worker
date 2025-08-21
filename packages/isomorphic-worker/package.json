@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "type": "module",
   "description": "simplified cross worker API for web workers and worker threads",
-  "homepage": "https://github.com/wixplosives/isomorphic-worker",
+  "homepage": "https://github.com/dazl-dev/isomorphic-worker",
   "exports": {
     "./worker-scope": {
       "browser": "./dist/browser-worker-scope.js",
@@ -38,11 +38,11 @@
     "threads"
   ],
   "bugs": {
-    "url": "https://github.com/wixplosives/isomorphic-worker/issues"
+    "url": "https://github.com/dazl-dev/isomorphic-worker/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wixplosives/isomorphic-worker.git",
+    "url": "git+https://github.com/dazl-dev/isomorphic-worker.git",
     "directory": "packages/isomorphic-worker"
   },
   "author": "Wix.com",
