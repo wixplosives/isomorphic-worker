@@ -1,5 +1,5 @@
 import { join } from '@file-services/path';
-import { Worker } from '@wixc3/isomorphic-worker/worker';
+import { Worker } from '@dazl/isomorphic-worker/worker';
 
 const isNode =
     typeof process === 'object' && typeof process.versions === 'object' && typeof process.versions.node !== 'undefined';

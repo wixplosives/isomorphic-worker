@@ -1,4 +1,4 @@
-import { createDisposables } from '@wixc3/create-disposables';
+import { createDisposables } from '@dazl/create-disposables';
 import { expect } from 'chai';
 import { initWorker } from './entry-point.js';
 

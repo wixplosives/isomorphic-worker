@@ -1,5 +1,5 @@
 {
-  "name": "@wixc3/isomorphic-worker",
+  "name": "@dazl/isomorphic-worker",
   "version": "2.0.0",
   "type": "module",
   "description": "simplified cross worker API for web workers and worker threads",
@@ -45,7 +45,7 @@
     "url": "git+https://github.com/dazl-dev/isomorphic-worker.git",
     "directory": "packages/isomorphic-worker"
   },
-  "author": "Wix.com",
+  "author": "Dazl",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

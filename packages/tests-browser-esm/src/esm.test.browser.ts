@@ -1,5 +1,5 @@
-import { Worker } from '@wixc3/isomorphic-worker/worker';
-import { createDisposables } from '@wixc3/create-disposables';
+import { Worker } from '@dazl/isomorphic-worker/worker';
+import { createDisposables } from '@dazl/create-disposables';
 import { expect } from 'chai';
 
 describe('BrowserWorker', () => {

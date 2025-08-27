@@ -1,5 +1,5 @@
 {
-  "name": "@wixc3/isomorphic-worker-tests-node",
+  "name": "@dazl/isomorphic-worker-tests-node",
   "version": "2.0.0",
   "private": true,
   "type": "module",

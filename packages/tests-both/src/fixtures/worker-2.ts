@@ -1,4 +1,4 @@
-import { worker } from '@wixc3/isomorphic-worker/worker-scope';
+import { worker } from '@dazl/isomorphic-worker/worker-scope';
 import { log } from '../log.js';
 
 // eslint-disable-next-line no-console
